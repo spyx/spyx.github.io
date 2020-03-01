@@ -4,4 +4,4 @@ title: About
 permalink: /about/
 ---
 
-Site under construction :) shortly will place some more information....
+Site under construction :) shortly will place some more information.... :construction:
