@@ -32,7 +32,7 @@ I found picture which asked my for passphrase
 
 After place passphrase from comment i received txt file. Quickly look on content and it was base 64 encodes. After decoding this i get name for another page - superadmin.php :smirk:
 
-On this page you can place ip address and will received ping back. Lets try add **& id** or **| id** to see if we can have some command injections. First command failed on is and resulted on empty page. Send on other side give us output of id. From that point there has to be some whitelistening on page. Lets try this command | cat superadmin.php. Bingo!! :relieved: that work after inspecting source code we see code for that page
+On this page you can place ip address and will received ping back. Lets try add **& id** or **\| id** to see if we can have some command injections. First command failed on is and resulted on empty page. Send on other side give us output of id. From that point there has to be some whitelistening on page. Lets try this command \| cat superadmin.php. Bingo!! :relieved: that work after inspecting source code we see code for that page
 
 ![](/images/vuln_hl/injection_comment.png)
 
