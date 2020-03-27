@@ -8,7 +8,7 @@ HI all. Another day with another walkthrough. I started with masscan to identify
 
 ![](/images/vulnhub_vulnuni/masscan.png)
 
-My target is on 192.168.1.72 address. Your will be slightly different. Right after that I lunched nmap and dirb to do same basic reconnaissance ...
+My target IP address is 192.168.1.76. Your will be slightly different. Right after that I lunched nmap and dirb to do same basic reconnaissance ...
 
 Until scans are done. I start look into port 80 to see if I can find any clues. 
 After little poking around I found hidden comment.
