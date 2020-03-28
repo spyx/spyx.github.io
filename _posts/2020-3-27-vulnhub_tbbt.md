@@ -1,7 +1,7 @@
 ---
 layout: post
 title: TBBT:FunWithFlags Walkthrough
-categories: [CTF, Vunlhub]
+categories: [CTF, Vulnhub]
 ---
 
 Hi all. I have one more walkthrough for you today. I tried TBBT: FunWithFlags. According to manual our victim machine should be on 192.168.1.105. We decide to ping it to make sure we have direct connection.
