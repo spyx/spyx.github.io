@@ -1,29 +1,51 @@
 ---
 layout: post
-title: Powershell Empire with windows 10 (http/ launcher_bat)
+title: Powershell Empire with windows 10 
 categories: [powershell, pentest]
 ---
 
-Disclaimer! I dont want to have bad opinion on Empire just want to save some nice afternoon some person who spend half day troubleshoot this. I only try to use http listener with launcher_bat stager.
+Disclaimer! If your tool is not working try harder :) 
 
 
-Hi everyone. After some time I decide to create some attack persistence on windows machines. After successful implementation of meterpreter i decide to use tool powershell empire. Original version was not longer supported on [github](https://github.com/EmpireProject/Empire). As kali still has python 2.7 i decide to fork it. I end up getting some error so i move for some googling. After certain time i found that BC security is released empire v3 and they have kali linux page. I simply typed
+Hi everyone. After some time I decide to create some attack persistence on windows machines. After successful implementation of meterpreter i decide to use tool powershell empire. Original version was not longer supported on [github](https://github.com/EmpireProject/Empire). As kali still has python 2.7 i decide to fork it. I end up getting some error so i move for some googling advice. BC security is released empire v3 and they have kali linux page package. I simply typed...
 
 ```
 sudo apt-get install powershell-empire
 ```
 
-Installation went smooth and I have Empire console in front of me. 
-I run my first http listener and start working on launcher_bat stager. When i moved stager to new machine and start to run ...nothing happen. Them i decide to turn off Windows Defender and Firewall too. Same results. Them i decide to start looking for packets in network. As both machines runs on virtualbox .After some google foo i have [solution](https://www.virtualbox.org/wiki/Network_tips) for my problem. I can capture all pakets on certain machine...
-
+Them just simply run 
 ```
-VBoxManage modifyvm [your-vm] --nictrace[adapter-number] on --nictracefi [adapter-number] file.pcap
+powershell-empire
 ```
 
-when i check packets i never see stager to make any connections. Them start research why this is happening and end up on this github [issue](https://github.com/EmpireProject/Empire/issues/1232). From i can understand... after 1803 released of Windows 10 there is feature which block default stager created within app. 
+![](/images/empire/01_empireScreen.png)
 
-Please let me know if you have solution will be happy to  create tutorial on it.
-If you have any questions feel free to reach me on twitter. 
+First thing we will set up listener. There are multiple options but i went with http. 
+
+![](/images/empire/02_listeners.png)
+
+Them you type ***execute***. You will see that your listeners is now listening. 
+
+![](/images/empire/03_execute.png)
+
+
+Make sure port, name is set up. You can also change DefaultDelay from 5s to 1s. When I was looking for some tutorial they start to create stager. Problem with stager was not working for me. Listeners have option to create launcher which will generate code for you. 
+
+![](/images/empire/04_launcher.png)
+
+I copied this powershell into powershell terminal and get shell back
+
+![](/images/empire/05_connection.png)
+
+Move to this agent and test connection to my victim machine
+
+![](/images/empire/06_shell.png)
+
+Also as you can see I have win10 machine. I turned off Defender for learning purposes. 
+
+![](/images/empire/07_shell.png)
+
+I hope you enjoy this reading...
 
 Cheers
 Spyx.
