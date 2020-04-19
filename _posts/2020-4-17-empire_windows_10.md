@@ -43,7 +43,7 @@ Move to this agent and test connection to my victim machine
 
 Also as you can see I have win10 machine. I turned off Defender for learning purposes. 
 
-![](/images/empire/07_shell.png)
+![](/images/empire/07_sysinfo.png)
 
 I hope you enjoy this reading...
 
