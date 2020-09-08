@@ -21,7 +21,7 @@ avatar: /images/avatar.png
 # Includes an icon in the footer for each username you enter
 footer-links:
   dribbble:
-  email: ralochs2@gmail.com
+  #email: 
   facebook:
   flickr:
   github: spyx
@@ -38,7 +38,7 @@ footer-links:
 
 # Enter your Disqus shortname (not your username) to enable commenting on posts
 # You can find your shortname on the Settings page of your Disqus account
-disqus: spyx-github-io-1
+disqus: 
 
 # Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
 google_analytics: 
