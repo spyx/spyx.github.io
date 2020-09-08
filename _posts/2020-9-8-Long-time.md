@@ -12,5 +12,4 @@ So I decide to learn other way and try to jump directly into labs and save some 
 
 Lastly I had commnet section but i decide to remove it. Feel free to hit my on my twitter. DM's open for everyone
 
-Thanks
-Marek
+Thank you 
