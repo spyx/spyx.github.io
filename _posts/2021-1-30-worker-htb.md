@@ -4,7 +4,7 @@ title: HTB Worker Walkthrough
 categories: [CTF, HTB]
 ---
 
-This is walkthroug of retired machine on HTB - Worker
+This is walkthrough of retired machine on HTB - Worker
 
 ![](/images/worker-htb/logo.png)
 
@@ -17,7 +17,7 @@ Only 3 ports open:
 * SVN service on port 3690
 * WinRM on port 5985
 
-When i checked web port it was jsut default IIS page.
+When i checked web port it was just default IIS page.
 
 ![](/images/worker-htb/02_default-website.png)
 
@@ -37,7 +37,7 @@ PORT     STATE SERVICE
 Nmap done: 1 IP address (1 host up) scanned in 1.04 seconds
 ```
 
-Bingo. I can get repository from svn as no authnetication is needed
+Bingo. I can get repository from svn as no authentication is needed
 
 ```bash
 svn checkout svn://10.10.10.203
@@ -51,7 +51,7 @@ Repository was moved to devops.worker.htb. I update my /etc/hosts file for this 
 
 ![](/images/worker-htb/04_login-req.png)
 
-As i did not have any credential i decide to return to svn as there will be posibility that commints before contains any credentials.Svn checkout has option -r to pull commit before
+As i did not have any credential i decide to return to svn as there will be possibility that commits before contains any credentials.Svn checkout has option -r to pull commit before
 
 ![](/images/worker-htb/05_creds-devops.png)
 
@@ -81,15 +81,15 @@ File contain password and usernames in clear text. One user match one in C:\user
 
 ![](/images/worker-htb/14_user.png)
 
-Tried evil-winrm and I was in as user robisl. I start looking for some options and re-run winpeas maybe i missed something. Them i tried to log as robisl to devops.worker.htb and there was another repo. THis repo allow run pipeline for application. As I was able to run anytihing why not add rohisl as administrator.
+Tried evil-winrm and I was in as user robisl. I start looking for some options and re-run winpeas maybe i missed something. Them i tried to log as robisl to devops.worker.htb and there was another repo. THis repo allow run pipeline for application. As I was able to run anything why not add rohisl as administrator.
 
 ![](/images/worker-htb/16_pipeline.png)
 
-It worked and after relunch my evil-winrm sesison i was administrator on box
+It worked and after relunch my evil-winrm session i was administrator on box
 
 ![](/images/worker-htb/17_admin.png)
 
-THank you reading 
+Thank you reading 
 
 
 
