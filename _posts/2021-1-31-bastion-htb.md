@@ -1,6 +1,6 @@
 ---
 layout: post
-title: HTB Bastion Walktrhoug
+title: HTB Bastion Walkthrough
 categories: [HTB, OSCP]
 ---
 
