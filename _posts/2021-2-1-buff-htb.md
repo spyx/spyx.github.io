@@ -6,7 +6,7 @@ categories: [HTB, OSCP]
 
 As I was dedicated to place one box every day i was planning to put another box. I hit hard bottom for some reason exploit is not working and I have no clue how to move now. So i decide to take break on this machine and try break another one in few hours in night and try write blog about this. And here we are. Please enjoy this box as I did :)
 
-![](/images/buff-htb/logo)
+![](/images/buff-htb/logo.png)
 
 I started with simple nmap script
 
