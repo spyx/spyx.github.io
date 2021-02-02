@@ -95,7 +95,7 @@ At line:1 char:1
 
 So it was AMSI that blocked me. Looking around home directory I found application called clouedme
 
-```cmd
+```powershell
 C:\Users\Administrator\Downloads>dir
 dir
  Volume in drive C has no label.
@@ -116,7 +116,7 @@ Quick google search reveal that this version contain buffer overflow exploit.
 
 i checked for first exploit. Looking for the exploit it need to connect on port 8888. 
 
-```cmd
+```powershell
 C:\Users\Administrator\Downloads>netstat -ano | findstr 8888      
 netstat -ano | findstr 8888
   TCP    127.0.0.1:8888         0.0.0.0:0              LISTENING       756
