@@ -192,13 +192,13 @@ wg.Wait()
 
 First line will close our channel when our loop will finish reading file. Otherwise will application hang for ever.
 
-[](https://media.giphy.com/media/pFZTlrO0MV6LoWSDXd/giphy.gif)
+![](https://media.giphy.com/media/pFZTlrO0MV6LoWSDXd/giphy.gif)
 
 Second line is required to tell application to wait for our all workers to finish first.
 
 With concurrency i was able to scan over 100 switches under 2 minutes! 
 
-[](https://media.giphy.com/media/3oz8xtBx06mcZWoNJm/giphy.gif)
+![](https://media.giphy.com/media/3oz8xtBx06mcZWoNJm/giphy.gif)
 
 If you want to create simple run go magic command inside **main.go**
 ```powershell
