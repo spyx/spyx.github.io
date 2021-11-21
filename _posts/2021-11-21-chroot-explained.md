@@ -15,7 +15,7 @@ According to linux documentation...
 
   I remembered i use it when installing arch linux few years back, it also save me when my GRUB bootloader get broken on my old ubuntu PC. 
 
- ## **Practice**
+## **Practice**
 
  Okay enough chit-chat, let's roll out sleeves and deep dive into chroot. I will create simple sandbox bash environment with few commands as `touch`, `rm`, `ls` and `id`.  You need any linux distribution where you have admin/sudo rights. I used Ubuntu desktop for this example.
 
