@@ -65,7 +65,7 @@ Chroot is not security feature. As you can see from man pages
 
 If I looked into [Hacktricks](https://book.hacktricks.xyz/linux-unix/privilege-escalation/escaping-from-limited-bash) and there was really nice C script for escaping. It looks like this...
 
-```c
+```bash
 #include <sys/stat.h>
 #include <stdlib.h>
 #include <unistd.h>
